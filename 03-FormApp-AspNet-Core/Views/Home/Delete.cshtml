@@ -1,0 +1,19 @@
+@model Product
+
+<h3 class="text-danger">Ürünü Silmek İstediğinize Emin Misiniz?</h3>
+<hr />
+<div>
+    <dl class="row">
+        <dt class="col-sm-2">Ürün Adı:</dt>
+        <dd class="col-sm-10">@Model.Name</dd>
+
+        <dt class="col-sm-2">Fiyat:</dt>
+        <dd class="col-sm-10">@Model.Price</dd>
+    </dl>
+
+    <form asp-action="Delete" method="post">
+        <input type="hidden" asp-for="ProductId" />
+        <button type="submit" class="btn btn-danger">Evet, Sil</button>
+        <a asp-action="Index" class="btn btn-secondary">İptal</a>
+    </form>
+</div>
